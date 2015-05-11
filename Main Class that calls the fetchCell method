@@ -1,0 +1,28 @@
+import java.util.ArrayList;
+
+public class TestClass {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		GenericWrapper g1=new GenericWrapper();
+		ArrayList<ArrayList<String>> sheet=new ArrayList<ArrayList<String>>();
+		try {
+			sheet=g1.fetchCell("Report2");
+			//System.out.println();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		//System.out.println(sheet.size());
+		for (int i = 0; i <sheet.size(); i++) {
+			//System.out.println("size"+sheet.size());
+			//System.out.println(sheet.get(i).get(0));
+			//System.out.println(sheet.get(i).get(1));
+			
+		}
+	}
+
+}

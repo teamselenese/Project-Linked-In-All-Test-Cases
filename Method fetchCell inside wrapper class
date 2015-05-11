@@ -1,0 +1,33 @@
+public ArrayList<ArrayList<String>> fetchCell(String fileName) {
+	ArrayList<ArrayList<String>> outerArrayList = new ArrayList<ArrayList<String>>();
+	ArrayList<String> record = new ArrayList<String>();	
+	try
+	{
+		FileInputStream fis=new FileInputStream("C:\\Users\\Deeban Laptop\\Documents\\Saravana's Selenium\\Working Directory\\"+fileName+".xlsx");
+		newWorkbook=new XSSFWorkbook(fis);
+		XSSFSheet sheetData=newWorkbook.getSheetAt(1);
+		for (int i = 1; i <=sheetData.getLastRowNum(); i++) {
+			for (int j = 0; j <sheetData.getRow(i).getLastCellNum(); j++) {
+				//record = new ArrayList<String>();	
+				//System.out.println(sheetData.getRow(i).getCell(j).getStringCellValue());
+				record.add(sheetData.getRow(i).getCell(j).getStringCellValue());
+				//System.out.println("record values"+record);
+			}
+			
+			outerArrayList.add(record);
+			//System.out.println("double array"+outerArrayList);
+		}
+		
+		System.out.println("double array"+outerArrayList);
+		//sheetData.getRow(rownum
+		//int row=sheetData.getLastRowNum();
+		//System.out.println("Array value="+outerArrayList);
+	}
+	//return outerArrayList;
+	catch(Exception e)
+	{
+		e.printStackTrace();
+	}
+	//System.out.println(outerArrayList);
+	return outerArrayList;
+}
